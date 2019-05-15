@@ -19,7 +19,7 @@ class ApplicationController < Sinatra::Base
 
   post '/articles' do 
     # binding.pry
-    @article = Article.create(params["article"])
+    @article = Article.create(:title => params[:title], :content => params[:content])
     redirect "/articles/#{@article.id}"
   end
   
@@ -42,7 +42,9 @@ class ApplicationController < Sinatra::Base
   #update
   patch '/articles/:id' do
     article = Article.find(params[:id])
-    article.update(params[:article])
+    @article.title = params[:title]
+    @article.content = params[:content]
+    @article.save
     redirect "/articles/#{article.id}"
   end
 
