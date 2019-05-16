@@ -1,0 +1,19 @@
+
+
+<% #index.erb view. That view should use ERB to iterate over @articles and render them on the page %>
+
+<h1>Behold all The Articles!</h1>
+
+<% # <a href="/dogs">Go back</a>  %>
+
+<% if @articles != nil %>
+  <%@articles.each do |article| %>
+    <h1>Article: <%= article.title   %></h1>
+    <p>Content:<br> <%= article.content %></p>
+    <p>ID: <%= article.id %></p>
+  <br>
+  <% end %>
+  <% else %>
+  <% @articles = [] %>
+  <h1>You have no articles!</h1>
+<% end %>
