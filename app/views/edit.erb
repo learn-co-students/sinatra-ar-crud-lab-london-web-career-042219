@@ -1,0 +1,22 @@
+<h1>Lets edit your article</h1>
+<form action= '/articles/<%= @article.id%>' method='post'>
+
+  <input type='hidden' name="_method" value="patch"/>
+
+<div>
+  <label>Title:</label>
+  <input type='text' name="article[title]" value="<%= @article.title%>"/>
+</div>
+
+<div>
+  <label>Content:</label>
+  <input type='text' name="article[content]" value="<%= @article.content%>"/>
+</div>
+
+  <input type='submit' value="Edit <%= @article.title%>"/>
+  </form>
+
+  <form action= '/articles/<%= @article.id%>' method='post'>
+    <input type='hidden' name="_method" value="delete"/>
+    <input type='submit' value="delete <%= @article.title%>"/>
+  </form>
