@@ -1,0 +1,14 @@
+<h1>Title: <%= @article.title %></h1>
+
+<p>Content: <%= @article.content %> </p><br>
+
+<p> 
+    To edit <%= @article.title.capitalize %> click 
+    <a href="/articles/<%= @article.id %>/edit">
+    here.
+    </a>
+</p>
+
+<a href="/articles">Go back to see all articles</a>
+
+
