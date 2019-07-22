@@ -1,0 +1,27 @@
+<% #This view should contain a form to update a specific article and POSTs to a controller action, patch '/articles/:id'. %>
+
+<form action="/articles/<%=@article.id%>" method="POST">
+
+  <input 
+  id="hidden" 
+  type="hidden" 
+  name="_method" 
+  value="PATCH"> <% #Overrides POST %>
+
+    <div>
+    <h1>Please Edit Your Article!:</h1>
+    <% #if article == nil show NO ARTICLE! %>
+      <label for="">Title:</label>
+      <input type="text" name="article[title]" value= "<%= @article.title %>" />
+    </div>
+    <div>
+      <label for ="">Content:</label>
+      <input type = "text" 
+      name = "article[content]" 
+      value = "<%= @article.content %>"
+      />
+    </div>
+    <input type="submit" value="Submit" />
+  </form>
+
+

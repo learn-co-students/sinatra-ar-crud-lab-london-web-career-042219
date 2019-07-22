@@ -1,0 +1,25 @@
+<h1>Behold your Article!</h1>
+
+<% # <a href="/dogs">Go back</a>  %>
+
+<% if @article != nil %>
+    <h1>Article: <%= @article.title   %></h1>
+    <p>Content:<br> <%= @article.content %></p>
+  <br>
+  <% else %>
+  <% @article = [] %>
+  <h1>No article found!</h1>
+<% end %>
+
+<form action= "/articles/<%=@article.id%>" method="POST">
+<input 
+  id="hidden" 
+  type="hidden" 
+  name="_method" 
+  value="DELETE"> <% #Overrides POST %>
+  <div>
+    <label for="">Delete Article?:</label> 
+  </div>
+ 
+  <input type="submit" value="Submit" name= "Delete" />
+</form>

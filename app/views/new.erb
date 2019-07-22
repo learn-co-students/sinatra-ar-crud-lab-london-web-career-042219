@@ -1,0 +1,19 @@
+
+<%#a form that POSTs to a controller action, /articles  %>
+<% #pointing to /articles, will trigger a render of an index.erb file automatically %>
+<h1>Please Submit a New Article:</h1>
+<form action="/articles" method="POST">
+
+  <div>
+    <label for="">Title:</label>
+    <input type="text" name="article[title]" />
+  </div>
+  <div>
+    <label for="">Content:</label>
+    <input type="text" name="article[content]" />
+  </div>
+  <input type="submit" value="Submit" />
+</form>
+
+
+</form>
